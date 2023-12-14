@@ -107,14 +107,14 @@ body {
 
 .content-box{
     width: 100%;
+    height: 58vw;
     padding-bottom: .5em;
     border-radius: 10px;
     text-align: start;
-    margin-bottom: 1rem;
-    overflow: hidden;
+    margin-bottom: 2rem;
 }
 .content-box img {
-    height: 58vw;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: inherit;
@@ -124,11 +124,10 @@ body {
     filter: blur(2px);
 }
 .content-box p {
-    margin-top: .5em;
     text-transform: uppercase;
     font-size: .9em;
+    margin-top: .3rem;
     text-decoration: slategrey;
-    
 }
 
 
@@ -243,10 +242,10 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.3rem;
+
     }
-    .content-box img {
-        min-height: 200px;
-        max-height: 500px;
+    .content-box {
+        max-height: 28rem;
     }
     footer {
         height: 300px;
@@ -309,3 +308,4 @@ footer {
         margin: 0 auto;
     }
 }
+
