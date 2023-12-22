@@ -23,6 +23,9 @@ section {
     margin-top: 4.5rem;
     text-align: center;
 }
+.section-container .heading {
+    font-size: 1.2rem;
+}
 .sec-title {
     border: none;
     display: inline-block;
@@ -32,9 +35,6 @@ section {
     background-color: #e8e5e480;
     font-size: .9rem;
     margin-bottom: .9rem;
-}
-.section-container .heading {
-    font-size: 1.2rem;
 }
 .section-container .heading h2 {
     font-weight: 500;
@@ -180,10 +180,11 @@ section {
 
 
   /*--- Footer section  ---*/
-footer {
+footer { 
     height: 400px;
     margin-block: 7rem .2rem;
-}
+    text-align: center;
+} 
      /* grid layout */
 .foot-content {
     height: inherit;
@@ -234,35 +235,7 @@ footer {
 .foot-nav-links a:hover {
     opacity: .5;
 }
-.shop-link .svg {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-}
-.shop  {
-    display: grid;
-    place-content: center;
-}
-.shop a {
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    text-decoration: none;
-    width: 90px;
-    padding: .3rem;
-    border-radius: 20px;
-    background-color: #e8e5e480;
-    color: #2e2d2d;
-    position: fixed;
-    bottom: 20px;
-    left: 45%;
-}
-.shop a:hover {
-    background-color: #ffffff80;
-    color: #000000;
-}
+
 
 
 
