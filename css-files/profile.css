@@ -20,11 +20,8 @@ body {
 }
 
 section {
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     text-align: center;
-}
-.section-container .heading {
-    font-size: 1.2rem;
 }
 .sec-title {
     border: none;
@@ -38,6 +35,7 @@ section {
 }
 .section-container .heading h2 {
     font-weight: 500;
+    font-size: 1.9rem;
 }
 
 
@@ -93,22 +91,27 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 
    /*---- Profile images section ---- */
 
-.profile-image .images {
+.img-box {
     width: 100%;
-    height: 300px;
+    height: 310px;
     border-radius: 15px;
+    padding: .5em;
 }
-.images img {
+.img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+    object-fit: cover;  
+    border-radius: 15px; 
 }
+.images .second-img {
+    display: none;
+} 
 
 
     /*----- ABOUT section ----*/
@@ -132,6 +135,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, minmax(50px, 1fr));
     place-content: center;
+    row-gap: 2rem;
 }
 .exp-content-box {
     padding: 1.5em;
@@ -164,6 +168,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 3rem;
+    row-gap: 2rem;
 } 
 .client-box {
     justify-self: center;
@@ -182,7 +187,7 @@ section {
   /*--- Footer section  ---*/
 footer { 
     height: 400px;
-    margin-block: 7rem .2rem;
+    margin-block: 7rem 1.5rem;
     text-align: center;
 } 
      /* grid layout */
@@ -190,18 +195,16 @@ footer {
     height: inherit;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: .5em;
 }
 .get-in-touch {
-    grid-row: 1;
+    grid-row: 2;
 }
 .foot-nav {
     grid-row: 5;
 }
-.shop {
-    grid-row: 6;
-}
+
      /* end of grid description */
 
 
@@ -235,6 +238,154 @@ footer {
 .foot-nav-links a:hover {
     opacity: .5;
 }
+
+
+  /*---- MEDIA QUERIES SECTION  -----*/
+
+    /* TABLET VIEWPORT MEDIA QUERIES 810PX */
+  @media (min-width: 810px) {
+    /*---- nav queries */
+    .all-nav-links {
+        border-radius: 18px;
+        padding: .2rem;
+    }
+    .all-nav-links li {
+        font-size: 1.17em;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .all-nav-links a {
+        border-radius: 18px; 
+        padding-inline: .8rem;
+    }
+
+      /* hero media query */
+    .profile-hero {
+        height: 52vh;
+    }
+    .profile-hero h1 {
+        font-size: 2.8rem;
+    }
+
+     /* profile images  */
+    .images .second-img {
+        display: block;
+    } 
+    .images {
+        display: flex;
+        gap: 1.5em;
+        max-width: 1400px;
+        height: 400px;
+    } 
+    .img-box  {
+        height: 100%;
+    }
+
+     /*-- ABOUT  */
+    .about {
+        margin-block: 10rem;
+    }
+    .about-para p {
+        font-size: 2.3rem;
+        text-wrap: balance;
+    }
+     
+     /* ---section heading */
+     .section-container .heading h2 {
+        font-weight: 500;
+        font-size: 2.3rem;
+    }
+
+     /*--- EXPERIENCE  */
+     .exp-content {
+        grid-template-columns: repeat(3, 1fr);
+     }
+
+     /* ---CLIENTS */
+    .client-content {
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 4rem;
+    } 
+
+      /* ----FOOOTER */
+    .get-in-touch > h1 {
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+    .get-in-touch a {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #737373;
+    }
+
+    .foot-nav {
+        padding-inline: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } 
+    .logo-title {
+        display: flex;
+        gap: .5em;
+        align-items: center;
+    }
+    .logo-title .logo {
+        position: relative;
+        top: 5px;
+    } 
+  }
+
+
+
+    /* --LAPTOP VIEWPORT MEDIA QUERIES 810PX */
+ @media (min-width: 1190px) {
+    /* hero laptop */
+    .profile-hero {
+        height: 70vh;
+    }
+    .profile-hero h1 {
+        font-size: 4.2rem;
+    }
+
+     /*-- images */
+    .profile-image {
+        display: grid;
+        place-content: center; 
+    }
+    .images {
+        height: 500px;
+    }
+
+ }
+
+ @media (min-width: 1400px) {
+     /*-- experience */
+    .exp-laptop-grid {
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        margin-bottom: 10rem;
+    }
+    .exp-content {
+        grid-column: 2;
+     } 
+    
+      /* -- client --  */
+    .clients {
+        display: grid;
+        place-content: center;
+    }  
+    .client-content {
+        max-width: 1400px;
+        min-width: 1400px;
+    }
+
+      /* -- footer -- */
+    .foot-nav {
+        min-width: 1390px;
+        max-width: 1400px;
+        justify-self: center;
+    }  
+ }  
 
 
 
