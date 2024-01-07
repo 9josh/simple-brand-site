@@ -40,6 +40,9 @@ section {
 
 
 /* ------ WORKING ON NAV ----- */
+.nav a:is(:link, :active, :visited).active {
+    background-color: #ffffff;
+}
 .nav{
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
@@ -62,7 +65,6 @@ section {
    background-color: #e8e5e480;
    border-radius: 25px;
    padding: .2rem;
-   
 }
 .nav-link {
    border-radius: 25px;
@@ -71,7 +73,7 @@ section {
    list-style: none;
 }
 .nav-link:hover {
-   background-color: #ffffff;
+   color: #6e6e6e;
 }
 .all-nav-links li:first-of-type + li {
    margin-inline: .8rem;
@@ -85,7 +87,6 @@ section {
 
 
    /*---- HERO-SECTION ----*/
-
 .profile-hero {
     height: 50vh;
     display: flex;
@@ -93,10 +94,13 @@ section {
     align-items: center;
     margin-bottom: 2rem;
 }
+#hero-text {
+     /* animating text when window load */
+    animation: heroLoad 1.5s ease-in-out;
+}
 
 
    /*---- Profile images section ---- */
-
 .img-box {
     width: 100%;
     height: 310px;
@@ -112,6 +116,12 @@ section {
 .images .second-img {
     display: none;
 } 
+.load-first-box {
+    animation: firstBox 1s ease-in-out;
+}
+.load-second-box {
+    animation: secondBox 1.3s ease-in-out;
+}
 
 
     /*----- ABOUT section ----*/
@@ -129,7 +139,6 @@ section {
 
 
   /*---- Experience section ----- */
-
 .exp-content {
     margin-top: 3rem;
     display: grid;
@@ -244,19 +253,15 @@ footer {
 
     /* TABLET VIEWPORT MEDIA QUERIES 810PX */
   @media (min-width: 810px) {
+    .container {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
     /*---- nav queries */
-    .all-nav-links {
-        border-radius: 18px;
-        padding: .2rem;
-    }
-    .all-nav-links li {
-        font-size: 1.17em;
-        text-transform: uppercase;
+    .all-nav-links a { 
         font-weight: 500;
-    }
-    .all-nav-links a {
-        border-radius: 18px; 
-        padding-inline: .8rem;
+        font-size: .9em;
     }
 
       /* hero media query */
@@ -313,7 +318,6 @@ footer {
         font-weight: 500;
     }
     .get-in-touch a {
-        font-size: 1.2rem;
         font-weight: 500;
         color: #737373;
     }
@@ -388,6 +392,85 @@ footer {
  }  
 
 
+   /* animations and transition */
+
+@keyframes heroLoad {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}   
+
+@keyframes firstBox {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes secondBox {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  /* about, experience, client animation stlye */
+.load-contents {
+    animation: contentLoading 1s ease-in-out;
+}  
+
+@keyframes contentLoading {
+    from {
+         opacity: 0;
+         transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  /* get in touch onload animations  */
+
+.load-let-work {
+    animation: loadLet-work 1s ease-in-out;
+}  
+.load-get-touch {
+    animation: loadGet-touch 1.2s ease-in-out;
+}
+
+@keyframes loadLet-work {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes loadGet-touch {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 

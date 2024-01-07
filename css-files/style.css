@@ -9,9 +9,7 @@
 body {
     padding-inline: .8rem;
     font-family: 'Roboto', sans-serif;
-  
 }
-
 
 .container {
     text-align: center;
@@ -19,6 +17,9 @@ body {
 }
 
 /* ------ WORKING ON NAV ----- */
+.nav a:is(:link, :active, :visited).active {
+    background-color: #ffffff;
+}
 .nav{
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
@@ -50,7 +51,7 @@ body {
    list-style: none;
 }
 .nav-link:hover {
-   background-color: #ffffff;
+    color: #6e6e6e;
 }
 .all-nav-links li:first-of-type + li {
    margin-inline: .8rem;
@@ -63,31 +64,40 @@ body {
 }
 
 
-/* ---- working on HERO section ----- */
 
+/* ---- working on HERO section ----- */
 
 .hero {
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    
 }
-
 .hero-content {
     width: 100%;
     max-width: 800px;
     padding: 25px;
 }
-.hero h1 {
+
+#hero-h1 {
     font-size: 2.3rem;
-    font-weight: 500;
+    font-weight: 500; 
 }
+.loaded {
+     /* animate the hero h1 when windpw loads */
+    animation: load 1.2s ease-in-out;
+} 
+
 .hero-content .hero-lists {
-    margin-top: 2.5rem;
+    margin-top: 2.4rem;
     justify-content: center;
     display: none;
 }
+.hero-list-load {
+     /* animate the hero link list when windpw loads */
+    animation: load 1.5s;
+} 
 .hero-lists .list {
     list-style: none;
     font-size: .85em;
@@ -101,12 +111,16 @@ body {
 }
 
 
-/* ---- working 0n MAIN-CONTENT ------ */
 
+/* ---- working 0n MAIN-CONTENT ------ */
 
 .contents {
     width: 100%;
 }
+.load-content {
+     /* animate the loading of content when page loads */
+    animation: content-load 1.5s;
+} 
 
 .content-box {
     width: 100%;
@@ -136,7 +150,6 @@ body {
     font-weight: 500;
     cursor: pointer;
 }
-
 .content-box .title-body i {
     display: none;
 }
@@ -165,16 +178,24 @@ footer {
 .shop {
     grid-row: 6;
 }
-     /* end of grid description */
+   /* end of grid layout description */
 
 
+ /* stlye footee contents  */
 .get-in-touch h1 {
     font-weight: 400;
+}
+.load-lets-work {
+    animation: lets-load 1.5s;
 }
 .get-in-touch a {
     color: #7f7f7f;
     text-decoration: none;
 }
+.load-get-touch {
+    animation: get-load 1.5s;
+}
+
 .logo-title .logo {
     width: 30px;
     height: 30px;
@@ -207,6 +228,9 @@ footer {
     display: grid;
     place-content: center;
 }
+.load-shop {
+    animation: shopload 1.5s ease-in-out;
+}
 .shop a {
     border: 1px solid #ccc;
     display: flex;
@@ -233,21 +257,28 @@ footer {
 
 
 @media (min-width: 810px) {
-    .container {
-        padding: 1.5rem;
-        text-align: center;
-    }
+
+     /* nav section */
     .all-nav-links a {
         font-weight: 500;
         font-size: .9em;
     }
-    .hero-content h1 {
-        font-size: 2.9rem;
-        text-wrap: balance;
+
+     /* hero- section  */
+    #hero-h1 {
+        font-size: 3rem;
+        letter-spacing: -0.2px;
+        line-height: 1.2em;
+        text-wrap: wrap;
     }
     .hero-content .hero-lists {
         display: flex;
     }
+    .hero-lists .list {
+        font-size: 1rem;
+    }
+
+    /* content section  */
     .contents {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -259,7 +290,6 @@ footer {
     }
      
     /* styling the hover effect of card content body */
-
     .content-box .title-body  {
         display: none;
         color: #ffffff;  
@@ -267,8 +297,7 @@ footer {
     .content-box:hover .title-body i {
         display: block;
         font-size: 2rem;
-        animation-name: icon-move;
-        animation-duration: 1s;
+        animation: icon-move .5s;
     } 
     @keyframes icon-move {
         0% {
@@ -295,7 +324,7 @@ footer {
         display: flex;
         justify-content: space-between;
         padding-block: 2em;
-        padding-inline: 1em;
+        padding-inline: .5em;
     }
 
      /* FOOTER queries media */
@@ -357,6 +386,17 @@ footer {
     }
 }
 
+@media (min-width: 1200px) {
+    /* hero- section  */
+    .hero {
+        margin-block: 6.5rem;
+    }
+    #hero-h1 {
+       font-size: 4.5rem;
+       text-wrap: wrap;
+   }
+}
+
 @media (min-width: 1430px) {
     .contents {
         max-width: 1430px;
@@ -364,3 +404,56 @@ footer {
     }
 }
 
+
+
+   /* TRANSITIONS AND ANIMATION  */
+@keyframes load {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes content-load {
+    from {
+        opacity: 0.5;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes lets-load {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes get-load {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes shopload {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

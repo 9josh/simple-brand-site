@@ -13,18 +13,10 @@ body {
 }
 
 
-.body-container {
-    text-align: center;
-    background-color:  #ffffff;
-    height: 92vh;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 4rem;
-}
-
-
-
 /* ------ WORKING ON NAV ----- */
+.nav a:is(:link, :active, :visited).active {
+    background-color: #ffffff;
+}
 .nav{
     align-self: start;
     display: grid;
@@ -44,8 +36,7 @@ body {
     height: 40px;
     background-color: #e8e5e480;
     border-radius: 25px;
-    padding: .2rem;
-    
+    padding: .2rem;  
 }
 .nav-link {
     border-radius: 25px;
@@ -54,7 +45,7 @@ body {
     list-style: none;
 }
 .nav-link:hover {
-    background-color: #ffffff;
+    color: #6e6e6e;
 }
 .all-nav-links li:first-of-type + li {
     margin-inline: .8rem;
@@ -67,8 +58,19 @@ body {
 }
 
 
+  /* main container --- hero & footer */
+.main-container {
+    text-align: center;
+    background-color:  #ffffff;
+    height: 85vh;
+    display: grid;
+    grid-template-rows: 150px repeat(2, 1fr);
+    row-gap: 2rem;
+}  
+
   /* -- hero content -- */
 .hero-content {
+    grid-row: 2;
     align-self: center;
 }  
 .get-in-touch h1 {
@@ -80,10 +82,9 @@ body {
     color: #7f7f7f;
 }
 
-
-
   /* --- footer --- */
 footer {
+    grid-row: 3;
     align-self: end;
 }
 .logo-title .logo {
@@ -117,15 +118,15 @@ footer {
 
    /* -- tablet query -   */
 @media (min-width: 810px) {
-     /* body container div */
-    .body-container {
-        height: 100vh;
+     /* main container div */
+    .main-container {
+        height: 90vh;
     }
 
-      /* --- nav   --- */
-    .nav {
-        margin-top: .5rem;
-      } 
+    .all-nav-links a {
+        font-weight: 500;
+        font-size: .9em;
+    }
 
       /* hero-section */
     .get-in-touch h1 {
@@ -168,5 +169,38 @@ footer {
     .foot-container {
         min-width: 1400px;
         max-width: 1450px;
+    }
+}
+
+
+
+
+  /* get in touch onload animations  */
+
+.load-let-work  {
+    animation: loadLet-work 1s ease-in-out;
+}  
+.load-get-touch {
+    animation: loadGet-touch 1.2s ease-in-out;
+}
+
+@keyframes loadLet-work {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes loadGet-touch {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
